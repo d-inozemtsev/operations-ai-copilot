@@ -1,0 +1,13 @@
+product,warehouse,quantity
+PE100,Moscow,1250
+PE100,Kazan,1380
+PE80,Moscow,1710
+PE80,Kazan,2100
+PP-H,Moscow,980
+PP-H,Samara,1120
+PP-R,Samara,1400
+PP-R,Novosibirsk,1050
+PET,Vladivostok,880
+PET,Moscow,1220
+PVC,Novosibirsk,1350
+PVC,Kazan,1250

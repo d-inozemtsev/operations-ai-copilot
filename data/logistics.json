@@ -1,0 +1,172 @@
+{
+  "shipments": [
+    {
+      "shipment_id": "SHP-001",
+      "product": "PE100",
+      "destination": "Moscow",
+      "quantity": 400,
+      "arrival_days": 5
+    },
+    {
+      "shipment_id": "SHP-002",
+      "product": "PE100",
+      "destination": "Moscow",
+      "quantity": 400,
+      "arrival_days": 12
+    },
+    {
+      "shipment_id": "SHP-003",
+      "product": "PE100",
+      "destination": "Kazan",
+      "quantity": 410,
+      "arrival_days": 6
+    },
+    {
+      "shipment_id": "SHP-004",
+      "product": "PE100",
+      "destination": "Kazan",
+      "quantity": 328,
+      "arrival_days": 13
+    },
+    {
+      "shipment_id": "SHP-005",
+      "product": "PE80",
+      "destination": "Moscow",
+      "quantity": 375,
+      "arrival_days": 7
+    },
+    {
+      "shipment_id": "SHP-006",
+      "product": "PE80",
+      "destination": "Moscow",
+      "quantity": 300,
+      "arrival_days": 14
+    },
+    {
+      "shipment_id": "SHP-007",
+      "product": "PE80",
+      "destination": "Kazan",
+      "quantity": 340,
+      "arrival_days": 5
+    },
+    {
+      "shipment_id": "SHP-008",
+      "product": "PE80",
+      "destination": "Kazan",
+      "quantity": 272,
+      "arrival_days": 12
+    },
+    {
+      "shipment_id": "SHP-009",
+      "product": "PP-H",
+      "destination": "Moscow",
+      "quantity": 310,
+      "arrival_days": 6
+    },
+    {
+      "shipment_id": "SHP-010",
+      "product": "PP-H",
+      "destination": "Moscow",
+      "quantity": 248,
+      "arrival_days": 13
+    },
+    {
+      "shipment_id": "SHP-011",
+      "product": "PP-H",
+      "destination": "Samara",
+      "quantity": 285,
+      "arrival_days": 7
+    },
+    {
+      "shipment_id": "SHP-012",
+      "product": "PP-H",
+      "destination": "Samara",
+      "quantity": 228,
+      "arrival_days": 14
+    },
+    {
+      "shipment_id": "SHP-013",
+      "product": "PP-R",
+      "destination": "Samara",
+      "quantity": 240,
+      "arrival_days": 5
+    },
+    {
+      "shipment_id": "SHP-014",
+      "product": "PP-R",
+      "destination": "Samara",
+      "quantity": 192,
+      "arrival_days": 12
+    },
+    {
+      "shipment_id": "SHP-015",
+      "product": "PP-R",
+      "destination": "Novosibirsk",
+      "quantity": 265,
+      "arrival_days": 6
+    },
+    {
+      "shipment_id": "SHP-016",
+      "product": "PP-R",
+      "destination": "Novosibirsk",
+      "quantity": 212,
+      "arrival_days": 13
+    },
+    {
+      "shipment_id": "SHP-017",
+      "product": "PET",
+      "destination": "Vladivostok",
+      "quantity": 185,
+      "arrival_days": 7
+    },
+    {
+      "shipment_id": "SHP-018",
+      "product": "PET",
+      "destination": "Vladivostok",
+      "quantity": 148,
+      "arrival_days": 14
+    },
+    {
+      "shipment_id": "SHP-019",
+      "product": "PET",
+      "destination": "Moscow",
+      "quantity": 295,
+      "arrival_days": 5
+    },
+    {
+      "shipment_id": "SHP-020",
+      "product": "PET",
+      "destination": "Moscow",
+      "quantity": 236,
+      "arrival_days": 12
+    },
+    {
+      "shipment_id": "SHP-021",
+      "product": "PVC",
+      "destination": "Novosibirsk",
+      "quantity": 320,
+      "arrival_days": 6
+    },
+    {
+      "shipment_id": "SHP-022",
+      "product": "PVC",
+      "destination": "Novosibirsk",
+      "quantity": 256,
+      "arrival_days": 13
+    },
+    {
+      "shipment_id": "SHP-023",
+      "product": "PVC",
+      "destination": "Kazan",
+      "quantity": 280,
+      "arrival_days": 7
+    },
+    {
+      "shipment_id": "SHP-024",
+      "product": "PVC",
+      "destination": "Kazan",
+      "quantity": 224,
+      "arrival_days": 14
+    }
+  ]
+}
