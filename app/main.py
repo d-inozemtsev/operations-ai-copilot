@@ -3,6 +3,7 @@ from pydantic import BaseModel, Field
 
 from app.agent import ask_agent
 from app.scenario import calculate_scenario
+from app.quality import check_data_quality
 
 
 app = FastAPI()
@@ -24,15 +25,19 @@ class AskRequest(BaseModel):
 def health():
     return {"status": "ok"}
 
-
 @app.post("/scenario")
 def run_scenario(request: ScenarioRequest):
     try:
         return calculate_scenario(**request.model_dump())
     except ValueError as error:
         raise HTTPException(status_code=404, detail=str(error)) from error
-
+    
 
 @app.post("/ask")
 def ask(request: AskRequest):
     return {"answer": ask_agent(request.question)}
+
+
+@app.get("/quality")
+def quality():
+    return check_data_quality()

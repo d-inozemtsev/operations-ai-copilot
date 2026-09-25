@@ -1,0 +1,142 @@
+{
+  "name": "Daily data quality check",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "ee5b5619-bb90-47f0-bcb4-ff1e7c7152f3",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "url": "http://127.0.0.1:8000/quality",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "77c62a24-b157-4a00-aafe-8be9e52e5102",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "3f3e9977-f7c6-4ac7-a6a3-0347164ab9ee",
+              "leftValue": "={{ $json.issue_count }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        448,
+        0
+      ],
+      "id": "b5920c97-bfe6-432d-99ea-2ae0f2db5566",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "chatId": "CHAT_ID_я просто скрываюсь от ФБР(((",
+        "text": "=Проверка данных: найдено проблем — {{ $json.issue_count }}. {{ $json.issues.map(issue => issue.source + ': ' + issue.message).join('\\n') }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        688,
+        -112
+      ],
+      "id": "632e38cd-c723-45db-8c2c-8b3dd68b601f",
+      "name": "Send a text message",
+      "webhookId": "34cb86ed-1a83-4fc2-94f6-be302863bfe9",
+      "credentials": {
+        "telegramApi": {
+          "id": "wdIcKLwHbdg8rmVv",
+          "name": "Telegram account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "6ce4ee4f-3e89-4618-a2d8-b53c91f15072",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "4a5b868a7894aefae6ecea3c0b3fdefae708b2d85b9f3bd7a8040d90b5d78ba9"
+  },
+  "nodeGroups": [],
+  "id": "DJFVTnqw3M3EFIjp",
+  "tags": []
+}
